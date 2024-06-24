@@ -1,0 +1,2210 @@
+[ReproMan] pre-command...
+[ReproMan] executing command code/containers/scripts/singularity_cmd run --bind /tmp:/node_tmp code/containers/images/bids/bids-fmriprep--23.2.0.sing sourcedata/raw /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep participant --participant-label '403' -w '/node_tmp/work_dir/fmriprep/ds003146_sub-403' -vv --nthreads 14 --omp-nthreads 7 --skip-bids-validation --notrack --fs-license-file /home1/03201/jbwexler/.freesurfer.txt --me-output-echos --cifti-output --skull-strip-t1w force --mem_mb 37500 --bids-database-dir /tmp --md-only-boilerplate --level minimal --use-syn-sdc warn
+[ReproMan] ... within /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep
+240301-22:20:38,921 nipype.workflow IMPORTANT:
+	 Running fMRIPrep version 23.2.0
+
+         License NOTICE ##################################################
+         fMRIPrep 23.2.0
+         Copyright 2023 The NiPreps Developers.
+         
+         This product includes software developed by
+         the NiPreps Community (https://nipreps.org/).
+         
+         Portions of this software were developed at the Department of
+         Psychology at Stanford University, Stanford, CA, US.
+         
+         This software is also distributed as a Docker container image.
+         The bootstrapping file for the image ("Dockerfile") is licensed
+         under the MIT License.
+         
+         This software may be distributed through an add-on package called
+         "Docker Wrapper" that is under the BSD 3-clause License.
+         #################################################################
+240301-22:20:39,237 nipype.workflow IMPORTANT:
+	 Building fMRIPrep's workflow:
+           * BIDS dataset path: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/raw.
+           * Participant list: ['403'].
+           * Run identifier: 20240301-222023_7f1e2649-e83c-4900-b0b6-74bad3618ec3.
+           * Output spaces: MNI152NLin2009cAsym:res-native.
+           * Pre-run FreeSurfer's SUBJECTS_DIR: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer.
+240301-22:20:39,928 nipype.workflow INFO:
+	 ANAT Stage 1: Adding template workflow
+240301-22:20:40,371 nipype.workflow INFO:
+	 ANAT Stage 2: Preparing brain extraction workflow
+240301-22:20:40,464 nipype.workflow INFO:
+	 ANAT Stage 3: Preparing segmentation workflow
+240301-22:20:40,469 nipype.workflow INFO:
+	 ANAT Stage 4: Preparing normalization workflow for ['MNI152NLin2009cAsym', 'MNI152NLin6Asym']
+240301-22:20:40,496 nipype.workflow INFO:
+	 ANAT Stage 5: Preparing surface reconstruction workflow
+240301-22:20:40,518 nipype.workflow INFO:
+	 ANAT Stage 6: Preparing mask refinement workflow
+240301-22:20:40,521 nipype.workflow INFO:
+	 ANAT No T2w images provided - skipping Stage 7
+240301-22:20:40,521 nipype.workflow INFO:
+	 ANAT Stage 8: Creating GIFTI surfaces for ['white', 'pial', 'midthickness', 'sphere_reg', 'sphere']
+240301-22:20:40,542 nipype.workflow INFO:
+	 ANAT Stage 8: Creating GIFTI metrics for ['thickness', 'sulc']
+240301-22:20:40,550 nipype.workflow INFO:
+	 ANAT Stage 8a: Creating cortical ribbon mask
+240301-22:20:40,554 nipype.workflow INFO:
+	 ANAT Stage 9: Creating fsLR registration sphere
+240301-22:20:40,558 nipype.workflow INFO:
+	 ANAT Stage 10: Creating MSM-Sulc registration sphere
+240301-22:20:40,648 nipype.workflow ERROR:
+	 Fieldmap-less (SyN) estimation was requested, but PhaseEncodingDirection information appears to be absent.
+240301-22:20:41,152 nipype.workflow INFO:
+	 No single-band-reference found for sub-403_task-vocal_bold.nii.gz.
+240301-22:20:41,232 nipype.workflow INFO:
+	 Stage 1: Adding HMC boldref workflow
+240301-22:20:41,240 nipype.workflow INFO:
+	 Stage 2: Adding motion correction workflow
+240301-22:20:41,249 nipype.workflow INFO:
+	 Stage 3: Adding coregistration boldref workflow
+240301-22:20:44,388 nipype.workflow INFO:
+	 fMRIPrep workflow graph with 294 nodes built successfully.
+240301-22:20:55,215 nipype.workflow VERBOSE:
+	 fMRIPrep config:
+		[environment]
+		cpu_count = 56
+		exec_env = "singularity"
+		free_mem = 177.9
+		overcommit_policy = "never"
+		overcommit_limit = "n/a"
+		nipype_version = "1.8.6"
+		templateflow_version = "23.1.0"
+		version = "23.2.0"
+		
+		[execution]
+		bids_dir = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/raw"
+		derivatives = []
+		bids_database_dir = "/tmp"
+		bids_description_hash = "72a871838732f63aaebc43a95d50693226fb255cdb6ae576a4239add490e0c07"
+		boilerplate_only = false
+		sloppy = false
+		debug = []
+		fmriprep_dir = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep"
+		fs_license_file = "/home1/03201/jbwexler/.freesurfer.txt"
+		fs_subjects_dir = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer"
+		layout = "BIDS Layout: ...003146-fmriprep/sourcedata/raw | Subjects: 33 | Sessions: 0 | Runs: 0"
+		log_dir = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/logs"
+		log_level = 15
+		low_mem = false
+		md_only_boilerplate = true
+		notrack = true
+		track_carbon = false
+		country_code = "CAN"
+		output_dir = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep"
+		me_output_echos = true
+		output_layout = "bids"
+		output_spaces = "MNI152NLin2009cAsym:res-native"
+		reports_only = false
+		run_uuid = "20240301-222023_7f1e2649-e83c-4900-b0b6-74bad3618ec3"
+		participant_label = [ "403",]
+		templateflow_home = "/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/templateflow"
+		work_dir = "/node_tmp/work_dir/fmriprep/ds003146_sub-403"
+		write_graph = false
+		
+		[workflow]
+		anat_only = false
+		aroma_err_on_warn = false
+		aroma_melodic_dim = 0
+		bold2t1w_dof = 6
+		bold2t1w_init = "register"
+		cifti_output = "91k"
+		fmap_bspline = false
+		force_syn = false
+		hires = true
+		ignore = []
+		level = "minimal"
+		longitudinal = false
+		run_msmsulc = true
+		medial_surface_nan = false
+		project_goodvoxels = false
+		regressors_all_comps = false
+		regressors_dvars_th = 1.5
+		regressors_fd_th = 0.5
+		run_reconall = true
+		skull_strip_fixed_seed = false
+		skull_strip_template = "OASIS30ANTs"
+		skull_strip_t1w = "force"
+		slice_time_ref = 0.5
+		spaces = "MNI152NLin2009cAsym:res-native MNI152NLin6Asym:res-2"
+		use_aroma = false
+		use_syn_sdc = "warn"
+		me_t2s_fit_method = "curvefit"
+		
+		[nipype]
+		crashfile_format = "txt"
+		get_linked_libs = false
+		memory_gb = 37.5
+		nprocs = 14
+		omp_nthreads = 7
+		plugin = "MultiProc"
+		remove_unnecessary_outputs = true
+		resource_monitor = false
+		stop_on_first_crash = false
+		
+		[seeds]
+		master = 59472
+		ants = 42775
+		numpy = 40902
+		
+		[nipype.plugin_args]
+		maxtasksperchild = 1
+		raise_insufficient = false
+240301-22:20:55,215 nipype.workflow IMPORTANT:
+	 fMRIPrep started!
+240301-22:20:55,650 nipype.workflow INFO:
+	 Workflow fmriprep_23_2_wf settings: ['check', 'execution', 'logging', 'monitoring']
+240301-22:20:55,772 nipype.workflow INFO:
+	 Running in parallel.
+240301-22:20:55,782 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 13 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:20:55,900 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.fsdir_run_20240301_222023_7f1e2649_e83c_4900_b0b6_74bad3618ec3" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/fsdir_run_20240301_222023_7f1e2649_e83c_4900_b0b6_74bad3618ec3".
+240301-22:20:55,901 nipype.workflow INFO:
+	 [Node] Executing "fsdir_run_20240301_222023_7f1e2649_e83c_4900_b0b6_74bad3618ec3" <niworkflows.interfaces.bids.BIDSFreeSurferDir>
+240301-22:20:55,906 nipype.workflow INFO:
+	 [Node] Finished "fsdir_run_20240301_222023_7f1e2649_e83c_4900_b0b6_74bad3618ec3", elapsed time 0.000411s.
+240301-22:20:55,908 nipype.workflow INFO:
+	 [Job 0] Completed (fmriprep_23_2_wf.fsdir_run_20240301_222023_7f1e2649_e83c_4900_b0b6_74bad3618ec3).
+240301-22:20:56,17 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.about" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/about".
+240301-22:20:56,19 nipype.workflow INFO:
+	 [Node] Executing "about" <fmriprep.interfaces.reports.AboutSummary>
+240301-22:20:56,19 nipype.workflow INFO:
+	 [Node] Finished "about", elapsed time 0.000187s.
+240301-22:20:56,21 nipype.workflow INFO:
+	 [Job 2] Completed (fmriprep_23_2_wf.sub_403_wf.about).
+240301-22:20:56,137 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.split_desc" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin2009cAsym/split_desc".
+240301-22:20:56,138 nipype.workflow INFO:
+	 [Node] Executing "split_desc" <smriprep.interfaces.templateflow.TemplateDesc>
+240301-22:20:56,139 nipype.workflow INFO:
+	 [Node] Finished "split_desc", elapsed time 0.000111s.
+240301-22:20:56,140 nipype.workflow INFO:
+	 [Job 10] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.split_desc).
+240301-22:20:56,271 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.split_desc" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin6Asym/split_desc".
+240301-22:20:56,272 nipype.workflow INFO:
+	 [Node] Executing "split_desc" <smriprep.interfaces.templateflow.TemplateDesc>
+240301-22:20:56,273 nipype.workflow INFO:
+	 [Node] Finished "split_desc", elapsed time 0.000108s.
+240301-22:20:56,274 nipype.workflow INFO:
+	 [Job 11] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.split_desc).
+240301-22:20:56,405 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.spacesource" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_reports_wf/template_iterator_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource".
+240301-22:20:56,509 nipype.workflow INFO:
+	 [Node] Executing "spacesource" <niworkflows.interfaces.space.SpaceDataSource>
+240301-22:20:56,510 nipype.workflow INFO:
+	 [Node] Finished "spacesource", elapsed time 0.000133s.
+240301-22:20:56,511 nipype.workflow INFO:
+	 [Job 12] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.spacesource).
+240301-22:20:57,785 nipype.workflow INFO:
+	 [MultiProc] Running 8 tasks, and 4 jobs ready. Free memory (GB): 36.09/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_wf.raw_sources
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_boldref_wf.raw_sources
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.get_dummy
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.val_bold
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.full_wm
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_tmpl
+                       * fmriprep_23_2_wf.sub_403_wf.bidssrc
+240301-22:20:57,912 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.tf_select" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin2009cAsym/tf_select".
+240301-22:20:57,914 nipype.workflow INFO:
+	 [Node] Executing "tf_select" <smriprep.interfaces.templateflow.TemplateFlowSelect>
+240301-22:20:57,995 nipype.workflow INFO:
+	 [Node] Finished "tf_select", elapsed time 0.080973s.
+240301-22:20:57,997 nipype.workflow INFO:
+	 [Job 20] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.tf_select).
+240301-22:20:58,139 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.tf_select" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin6Asym/tf_select".
+240301-22:20:58,141 nipype.workflow INFO:
+	 [Node] Executing "tf_select" <smriprep.interfaces.templateflow.TemplateFlowSelect>
+240301-22:20:58,215 nipype.workflow INFO:
+	 [Node] Finished "tf_select", elapsed time 0.073419s.
+240301-22:20:58,216 nipype.workflow INFO:
+	 [Job 21] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.tf_select).
+240301-22:20:58,353 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.gen_tplid" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_reports_wf/template_iterator_wf/_in_tuple_MNI152NLin2009cAsym.resnative/gen_tplid".
+240301-22:20:58,355 nipype.workflow INFO:
+	 [Node] Executing "gen_tplid" <nipype.interfaces.utility.wrappers.Function>
+240301-22:20:58,356 nipype.workflow INFO:
+	 [Node] Finished "gen_tplid", elapsed time 0.000336s.
+240301-22:20:58,357 nipype.workflow INFO:
+	 [Job 22] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.gen_tplid).
+240301-22:20:58,483 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.select_tpl" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_reports_wf/template_iterator_wf/_in_tuple_MNI152NLin2009cAsym.resnative/select_tpl".
+240301-22:20:58,485 nipype.workflow INFO:
+	 [Node] Executing "select_tpl" <smriprep.interfaces.templateflow.TemplateFlowSelect>
+240301-22:20:58,568 nipype.workflow INFO:
+	 [Node] Finished "select_tpl", elapsed time 0.082656s.
+240301-22:20:58,570 nipype.workflow INFO:
+	 [Job 23] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.template_iterator_wf.select_tpl).
+240301-22:20:59,44 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.full_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/full_wm".
+240301-22:20:59,46 nipype.workflow INFO:
+	 [Node] Executing "full_wm" <nipype.interfaces.utility.wrappers.Function>
+240301-22:20:59,88 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_boldref_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_hmc_boldref_wf/raw_sources".
+240301-22:20:59,89 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:20:59,98 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.000487s.
+240301-22:20:59,100 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_hmc_wf/raw_sources".
+240301-22:20:59,101 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:20:59,102 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.000367s.
+240301-22:20:59,145 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/lap_tmpl".
+240301-22:20:59,147 nipype.workflow INFO:
+	 [Node] Executing "lap_tmpl" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:20:59,156 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_tmpl" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/res_tmpl".
+240301-22:20:59,158 nipype.workflow INFO:
+	 [Node] Executing "res_tmpl" <niworkflows.interfaces.nibabel.RegridToZooms>
+240301-22:20:59,219 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.get_dummy" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/hmc_boldref_wf/get_dummy".
+240301-22:20:59,220 nipype.workflow INFO:
+	 [Node] Executing "get_dummy" <niworkflows.interfaces.bold.NonsteadyStatesDetector>
+240301-22:20:59,224 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.val_bold" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/hmc_boldref_wf/val_bold".
+240301-22:20:59,226 nipype.workflow INFO:
+	 [Node] Executing "val_bold" <niworkflows.interfaces.header.ValidateImage>
+240301-22:20:59,284 nipype.workflow INFO:
+	 [Node] Finished "val_bold", elapsed time 0.051616s.
+240301-22:20:59,604 nipype.workflow INFO:
+	 [Node] Finished "full_wm", elapsed time 0.546452s.
+240301-22:20:59,785 nipype.workflow INFO:
+	 [Job 4] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.full_wm).
+240301-22:20:59,786 nipype.workflow INFO:
+	 [Job 6] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.val_bold).
+240301-22:20:59,787 nipype.workflow INFO:
+	 [Job 8] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_boldref_wf.raw_sources).
+240301-22:20:59,787 nipype.workflow INFO:
+	 [Job 9] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_wf.raw_sources).
+240301-22:20:59,788 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 1 jobs ready. Free memory (GB): 36.70/37.50, Free processors: 10/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.get_dummy
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_tmpl
+                       * fmriprep_23_2_wf.sub_403_wf.bidssrc
+240301-22:20:59,922 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.func_fit_reports_wf.ds_report_validation" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/func_fit_reports_wf/ds_report_validation".
+240301-22:20:59,925 nipype.workflow INFO:
+	 [Node] Executing "ds_report_validation" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:20:59,936 nipype.workflow INFO:
+	 [Node] Finished "ds_report_validation", elapsed time 0.010661s.
+240301-22:20:59,938 nipype.workflow INFO:
+	 [Job 17] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.func_fit_reports_wf.ds_report_validation).
+240301-22:21:00,8 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bidssrc" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bidssrc".
+240301-22:21:00,10 nipype.workflow INFO:
+	 [Node] Executing "bidssrc" <niworkflows.interfaces.bids.BIDSDataGrabber>
+240301-22:21:00,14 nipype.interface INFO:
+	 No "t2w" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "flair" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "fmap" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "sbref" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "roi" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "pet" images found for sub-403
+240301-22:21:00,15 nipype.interface INFO:
+	 No "asl" images found for sub-403
+240301-22:21:00,16 nipype.workflow INFO:
+	 [Node] Finished "bidssrc", elapsed time 0.000755s.
+240301-22:21:00,320 nipype.workflow INFO:
+	 [Node] Finished "res_tmpl", elapsed time 1.146863s.
+240301-22:21:01,502 nipype.workflow INFO:
+	 [Node] Finished "get_dummy", elapsed time 2.273207s.
+240301-22:21:01,791 nipype.workflow INFO:
+	 [Job 1] Completed (fmriprep_23_2_wf.sub_403_wf.bidssrc).
+240301-22:21:01,792 nipype.workflow INFO:
+	 [Job 3] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_tmpl).
+240301-22:21:01,793 nipype.workflow INFO:
+	 [Job 7] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.get_dummy).
+240301-22:21:01,794 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 5 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+240301-22:21:01,913 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.ds_report_about" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/ds_report_about".
+240301-22:21:01,916 nipype.workflow INFO:
+	 [Node] Executing "ds_report_about" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:21:01,925 nipype.workflow INFO:
+	 [Node] Finished "ds_report_about", elapsed time 0.008031s.
+240301-22:21:01,927 nipype.workflow INFO:
+	 [Job 15] Completed (fmriprep_23_2_wf.sub_403_wf.ds_report_about).
+240301-22:21:02,23 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.anat_ref_dimensions" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/anat_ref_dimensions".
+240301-22:21:02,52 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.calc_dummy_scans" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/hmc_boldref_wf/calc_dummy_scans".
+240301-22:21:02,55 nipype.workflow INFO:
+	 [Node] Executing "calc_dummy_scans" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:02,56 nipype.workflow INFO:
+	 [Node] Finished "calc_dummy_scans", elapsed time 0.000307s.
+240301-22:21:02,56 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/hmc_boldref_wf/gen_avg".
+240301-22:21:02,57 nipype.workflow INFO:
+	 [Job 19] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.calc_dummy_scans).
+240301-22:21:02,62 nipype.workflow INFO:
+	 [Node] Executing "gen_avg" <niworkflows.interfaces.images.RobustAverage>
+240301-22:21:02,888 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bids_info" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bids_info".
+240301-22:21:02,890 nipype.workflow INFO:
+	 [Node] Executing "bids_info" <niworkflows.interfaces.bids.BIDSInfo>
+240301-22:21:02,897 nipype.workflow INFO:
+	 [Node] Finished "bids_info", elapsed time 0.005776s.
+240301-22:21:02,947 nipype.workflow INFO:
+	 [Node] Executing "anat_ref_dimensions" <niworkflows.interfaces.images.TemplateDimensions>
+240301-22:21:03,194 nipype.workflow INFO:
+	 [Node] Finished "anat_ref_dimensions", elapsed time 0.242532s.
+240301-22:21:03,795 nipype.workflow INFO:
+	 [Job 13] Completed (fmriprep_23_2_wf.sub_403_wf.bids_info).
+240301-22:21:03,795 nipype.workflow INFO:
+	 [Job 14] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.anat_ref_dimensions).
+240301-22:21:03,797 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 6 jobs ready. Free memory (GB): 36.30/37.50, Free processors: 12/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+240301-22:21:03,918 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.summary" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/summary".
+240301-22:21:03,921 nipype.workflow INFO:
+	 [Node] Executing "summary" <fmriprep.interfaces.reports.SubjectSummary>
+240301-22:21:03,924 nipype.workflow INFO:
+	 [Node] Finished "summary", elapsed time 0.002207s.
+240301-22:21:03,925 nipype.workflow INFO:
+	 [Job 24] Completed (fmriprep_23_2_wf.sub_403_wf.summary).
+240301-22:21:04,55 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.fs_isrunning" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/fs_isrunning".
+240301-22:21:04,57 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.t1w_conform_check" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_reports_wf/t1w_conform_check".
+240301-22:21:04,57 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_t1w_mask_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/ds_t1w_mask_wf/raw_sources".
+240301-22:21:04,57 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_ribbon_mask_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/ds_ribbon_mask_wf/raw_sources".
+240301-22:21:04,58 nipype.workflow INFO:
+	 [Node] Executing "t1w_conform_check" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:04,59 nipype.workflow INFO:
+	 [Node] Finished "t1w_conform_check", elapsed time 0.000306s.
+240301-22:21:04,60 nipype.workflow INFO:
+	 [Job 29] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.t1w_conform_check).
+240301-22:21:04,63 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:04,64 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.000396s.
+240301-22:21:04,81 nipype.workflow INFO:
+	 [Node] Setting-up "_denoise0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0".
+240301-22:21:04,82 nipype.workflow INFO:
+	 [Node] Executing "_denoise0" <nipype.interfaces.ants.segmentation.DenoiseImage>
+240301-22:21:04,118 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:04,119 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.000378s.
+240301-22:21:04,896 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.896284:++ 3dvolreg: AFNI version=AFNI_24.0.00 (Jan  7 2024) [64-bit]
+240301-22:21:04,896 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.896284:++ Authored by: RW Cox
+240301-22:21:04,904 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.904647:** AFNI converts NIFTI_datatype=4 (INT16) in file /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/hmc_boldref_wf/gen_avg/sub-403_task-vocal_bold_sliced.nii.gz to FLOAT32
+240301-22:21:04,904 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.904693:     Warnings of this type will be muted for this session.
+240301-22:21:04,904 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.904693:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+240301-22:21:04,914 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:04.914908:++ Coarse del was 10, replaced with 4
+240301-22:21:05,15 nipype.workflow INFO:
+	 [Node] Executing "fs_isrunning" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:05,17 nipype.workflow INFO:
+	 [Node] Finished "fs_isrunning", elapsed time 0.000647s.
+240301-22:21:05,797 nipype.workflow INFO:
+	 [Job 25] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.fs_isrunning).
+240301-22:21:05,798 nipype.workflow INFO:
+	 [Job 27] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_t1w_mask_wf.raw_sources).
+240301-22:21:05,799 nipype.workflow INFO:
+	 [Job 28] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_ribbon_mask_wf.raw_sources).
+240301-22:21:05,800 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 2 jobs ready. Free memory (GB): 36.10/37.50, Free processors: 5/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+240301-22:21:05,908 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.ds_report_summary" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/ds_report_summary".
+240301-22:21:05,912 nipype.workflow INFO:
+	 [Node] Executing "ds_report_summary" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:21:05,921 nipype.workflow INFO:
+	 [Node] Finished "ds_report_summary", elapsed time 0.0078s.
+240301-22:21:05,922 nipype.workflow INFO:
+	 [Job 33] Completed (fmriprep_23_2_wf.sub_403_wf.ds_report_summary).
+240301-22:21:06,9 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.ds_t1w_conform_report" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_reports_wf/ds_t1w_conform_report".
+240301-22:21:06,13 nipype.workflow INFO:
+	 [Node] Executing "ds_t1w_conform_report" <smriprep.interfaces.DerivativesDataSink>
+240301-22:21:06,22 nipype.workflow INFO:
+	 [Node] Finished "ds_t1w_conform_report", elapsed time 0.008139s.
+240301-22:21:06,23 nipype.workflow INFO:
+	 [Job 35] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_reports_wf.ds_t1w_conform_report).
+240301-22:21:07,799 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 36.10/37.50, Free processors: 5/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl
+240301-22:21:08,5 nipype.workflow INFO:
+	 [Node] Finished "lap_tmpl", elapsed time 8.653877s.
+240301-22:21:09,800 nipype.workflow INFO:
+	 [Job 5] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_tmpl).
+240301-22:21:09,801 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 36.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg
+240301-22:21:09,927 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.mrg_tmpl" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/mrg_tmpl".
+240301-22:21:09,951 nipype.workflow INFO:
+	 [Node] Executing "mrg_tmpl" <nipype.interfaces.utility.base.Merge>
+240301-22:21:09,952 nipype.workflow INFO:
+	 [Node] Finished "mrg_tmpl", elapsed time 0.000157s.
+240301-22:21:11,802 nipype.workflow INFO:
+	 [Job 16] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.mrg_tmpl).
+240301-22:21:11,804 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 36.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg
+240301-22:21:55,623 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:55.623093:++ Max displacement in automask = 0.29 (mm) at sub-brick 18
+240301-22:21:55,623 nipype.interface INFO:
+	 stderr 2024-03-01T22:21:55.623093:++ Max delta displ  in automask = 0.17 (mm) at sub-brick 3
+240301-22:21:59,356 nipype.workflow INFO:
+	 [Node] Finished "gen_avg", elapsed time 57.293877s.
+240301-22:21:59,879 nipype.workflow INFO:
+	 [Job 18] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.hmc_boldref_wf.gen_avg).
+240301-22:21:59,881 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+240301-22:21:59,992 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_boldref_wf.ds_boldref" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_hmc_boldref_wf/ds_boldref".
+240301-22:21:59,993 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.fmapref_buffer" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/fmapref_buffer".
+240301-22:21:59,995 nipype.workflow INFO:
+	 [Node] Executing "fmapref_buffer" <nipype.interfaces.utility.wrappers.Function>
+240301-22:21:59,997 nipype.workflow INFO:
+	 [Node] Finished "fmapref_buffer", elapsed time 0.000678s.
+240301-22:21:59,997 nipype.workflow INFO:
+	 [Node] Executing "ds_boldref" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:22:00,36 nipype.interface WARNING:
+	 Changing /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sub-403/func/sub-403_task-vocal_desc-hmc_boldref.nii.gz dtype from int16 to float32
+240301-22:22:00,319 nipype.workflow INFO:
+	 [Node] Finished "ds_boldref", elapsed time 0.321553s.
+240301-22:22:00,321 nipype.workflow INFO:
+	 [Job 31] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_boldref_wf.ds_boldref).
+240301-22:22:00,551 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/bold_hmc_wf/mcflirt".
+240301-22:22:00,558 nipype.workflow INFO:
+	 [Node] Executing "mcflirt" <nipype.interfaces.fsl.preprocess.MCFLIRT>
+240301-22:22:01,883 nipype.workflow INFO:
+	 [Job 30] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.fmapref_buffer).
+240301-22:22:02,624 nipype.workflow INFO:
+	 [Node] Finished "_denoise0", elapsed time 58.34035s.
+240301-22:22:15,533 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise
+240301-22:22:15,642 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_coreg_boldref_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_coreg_boldref_wf/raw_sources".
+240301-22:22:15,642 nipype.workflow INFO:
+	 [Job 26] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.denoise).
+240301-22:22:15,643 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 12/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_coreg_boldref_wf.raw_sources
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:22:15,644 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:22:15,645 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.000399s.
+240301-22:22:15,734 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/init_aff".
+240301-22:22:15,737 nipype.workflow INFO:
+	 [Node] Executing "init_aff" <nipype.interfaces.ants.utils.AI>
+240301-22:22:15,739 nipype.workflow INFO:
+	 [Node] Setting-up "_anat_conform0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/anat_conform/mapflow/_anat_conform0".
+240301-22:22:15,740 nipype.workflow INFO:
+	 [Node] Executing "_anat_conform0" <niworkflows.interfaces.images.Conform>
+240301-22:22:15,768 nipype.workflow INFO:
+	 [Node] Finished "_anat_conform0", elapsed time 0.027256s.
+240301-22:22:17,645 nipype.workflow INFO:
+	 [Job 37] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_coreg_boldref_wf.raw_sources).
+240301-22:22:17,646 nipype.workflow INFO:
+	 [Job 34] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.anat_conform).
+240301-22:22:17,647 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:22:17,752 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.get1st" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/get1st".
+240301-22:22:17,757 nipype.workflow INFO:
+	 [Node] Executing "get1st" <nipype.interfaces.utility.base.Select>
+240301-22:22:17,757 nipype.workflow INFO:
+	 [Node] Finished "get1st", elapsed time 0.000247s.
+240301-22:22:19,647 nipype.workflow INFO:
+	 [Job 40] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_template_wf.get1st).
+240301-22:22:43,855 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:22:43,964 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_validate" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_validate".
+240301-22:22:43,966 nipype.workflow INFO:
+	 [Node] Executing "anat_validate" <niworkflows.interfaces.header.ValidateImage>
+240301-22:22:43,988 nipype.workflow INFO:
+	 [Node] Finished "anat_validate", elapsed time 0.022153s.
+240301-22:22:43,990 nipype.workflow INFO:
+	 [Job 43] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.anat_validate).
+240301-22:22:44,105 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:22:44,212 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.fov_check" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/fov_check".
+240301-22:22:44,218 nipype.workflow INFO:
+	 [Node] Executing "fov_check" <nipype.interfaces.utility.wrappers.Function>
+240301-22:22:44,238 nipype.workflow INFO:
+	 [Node] Setting-up "_truncate_images0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/truncate_images/mapflow/_truncate_images0".
+240301-22:22:44,239 nipype.workflow INFO:
+	 [Node] Executing "_truncate_images0" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:22:44,495 nipype.workflow INFO:
+	 [Node] Finished "fov_check", elapsed time 0.276434s.
+240301-22:22:44,922 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.recon_config" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/recon_config".
+240301-22:22:44,929 nipype.workflow INFO:
+	 [Node] Executing "recon_config" <niworkflows.interfaces.freesurfer.FSDetectInputs>
+240301-22:22:44,952 nipype.workflow INFO:
+	 [Node] Finished "recon_config", elapsed time 0.022554s.
+240301-22:22:46,107 nipype.workflow INFO:
+	 [Job 46] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.recon_config).
+240301-22:22:46,107 nipype.workflow INFO:
+	 [Job 47] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.fov_check).
+240301-22:22:46,109 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 33.87/37.50, Free processors: 5/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.truncate_images
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:22:48,6 nipype.workflow INFO:
+	 [Node] Finished "_truncate_images0", elapsed time 3.594146s.
+240301-22:22:48,113 nipype.workflow INFO:
+	 [Job 45] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.truncate_images).
+240301-22:22:48,114 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 34.07/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt
+240301-22:23:18,462 nipype.workflow INFO:
+	 [Node] Finished "mcflirt", elapsed time 77.903197s.
+240301-22:23:20,179 nipype.workflow INFO:
+	 [Job 32] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.mcflirt).
+240301-22:23:20,181 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 4 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+240301-22:23:20,375 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.fsl2itk" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/bold_hmc_wf/fsl2itk".
+240301-22:23:20,459 nipype.workflow INFO:
+	 [Node] Executing "fsl2itk" <niworkflows.interfaces.itk.MCFLIRT2ITK>
+240301-22:23:20,459 nipype.interface WARNING:
+	 Multithreading is deprecated. Remove the num_threads input.
+240301-22:23:20,637 nipype.workflow INFO:
+	 [Node] Finished "fsl2itk", elapsed time 0.177442s.
+240301-22:23:22,181 nipype.workflow INFO:
+	 [Job 38] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.fsl2itk).
+240301-22:23:22,183 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 4 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+240301-22:23:22,314 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_wf.ds_xforms" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_hmc_wf/ds_xforms".
+240301-22:23:22,318 nipype.workflow INFO:
+	 [Node] Executing "ds_xforms" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:23:22,327 nipype.workflow INFO:
+	 [Node] Finished "ds_xforms", elapsed time 0.008268s.
+240301-22:23:22,329 nipype.workflow INFO:
+	 [Job 42] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_hmc_wf.ds_xforms).
+240301-22:23:22,689 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.normalize_motion" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/bold_hmc_wf/normalize_motion".
+240301-22:23:22,757 nipype.workflow INFO:
+	 [Node] Executing "normalize_motion" <niworkflows.interfaces.confounds.NormalizeMotionParams>
+240301-22:23:22,760 nipype.workflow INFO:
+	 [Node] Finished "normalize_motion", elapsed time 0.002311s.
+240301-22:23:24,183 nipype.workflow INFO:
+	 [Job 39] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.bold_hmc_wf.normalize_motion).
+240301-22:23:24,185 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+240301-22:23:24,314 nipype.workflow INFO:
+	 [Node] Setting-up "_inu_n40" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/inu_n4/mapflow/_inu_n40".
+240301-22:23:24,316 nipype.workflow INFO:
+	 [Node] Executing "_inu_n40" <nipype.interfaces.ants.segmentation.N4BiasFieldCorrection>
+240301-22:23:26,187 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 37.10/37.50, Free processors: 0/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff
+240301-22:23:37,472 nipype.workflow INFO:
+	 [Node] Finished "init_aff", elapsed time 81.734114s.
+240301-22:23:38,202 nipype.workflow INFO:
+	 [Job 36] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.init_aff).
+240301-22:23:38,203 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4
+240301-22:23:38,321 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.norm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/norm".
+240301-22:23:38,326 nipype.workflow INFO:
+	 [Node] Executing "norm" <niworkflows.interfaces.fixes.FixHeaderRegistration>
+240301-22:23:39,288 nipype.workflow INFO:
+	 [Node] Finished "norm", elapsed time 0.961835s.
+240301-22:23:40,204 nipype.workflow INFO:
+	 [Job 41] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.norm).
+240301-22:23:40,206 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4
+240301-22:23:40,317 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.map_brainmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/map_brainmask".
+240301-22:23:40,320 nipype.workflow INFO:
+	 [Node] Executing "map_brainmask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+240301-22:23:41,40 nipype.workflow INFO:
+	 [Node] Finished "map_brainmask", elapsed time 0.500512s.
+240301-22:23:42,206 nipype.workflow INFO:
+	 [Job 44] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.map_brainmask).
+240301-22:23:42,207 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4
+240301-22:23:42,316 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fix_header" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/fix_header".
+240301-22:23:42,318 nipype.workflow INFO:
+	 [Node] Executing "fix_header" <niworkflows.interfaces.header.CopyHeader>
+240301-22:23:42,384 nipype.workflow INFO:
+	 [Node] Finished "fix_header", elapsed time 0.065642s.
+240301-22:23:42,385 nipype.workflow INFO:
+	 [Job 48] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fix_header).
+240301-22:23:44,75 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/autorecon1".
+240301-22:23:44,80 nipype.workflow INFO:
+	 [Node] Executing "autorecon1" <smriprep.interfaces.freesurfer.ReconAll>
+240301-22:23:44,208 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 0/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4
+240301-22:23:49,228 nipype.workflow INFO:
+	 [Node] Finished "_inu_n40", elapsed time 24.710501999999998s.
+240301-22:23:50,213 nipype.workflow INFO:
+	 [Job 49] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4).
+240301-22:23:50,214 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 32.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:23:50,335 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_target" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/res_target".
+240301-22:23:50,337 nipype.workflow INFO:
+	 [Node] Executing "res_target" <niworkflows.interfaces.nibabel.RegridToZooms>
+240301-22:23:50,357 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/lap_target".
+240301-22:23:50,357 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+240301-22:23:50,359 nipype.workflow INFO:
+	 [Node] Executing "lap_target" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:23:50,359 nipype.workflow INFO:
+	 [Node] Executing "n4_correct" <niworkflows.interfaces.fixes.FixN4BiasFieldCorrection>
+240301-22:23:51,321 nipype.workflow INFO:
+	 [Node] Finished "res_target", elapsed time 0.983585s.
+240301-22:23:52,215 nipype.workflow INFO:
+	 [Job 52] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.res_target).
+240301-22:23:52,216 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 32.10/37.50, Free processors: 5/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.n4_correct
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:23:53,829 nipype.workflow INFO:
+	 [Node] Finished "n4_correct", elapsed time 3.293691s.
+240301-22:23:54,218 nipype.workflow INFO:
+	 [Job 51] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.n4_correct).
+240301-22:23:54,219 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:23:54,330 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_coreg_boldref_wf.ds_boldref" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_coreg_boldref_wf/ds_boldref".
+240301-22:23:54,334 nipype.workflow INFO:
+	 [Node] Executing "ds_boldref" <fmriprep.interfaces.DerivativesDataSink>
+240301-22:23:54,372 nipype.interface WARNING:
+	 Changing /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sub-403/func/sub-403_task-vocal_desc-coreg_boldref.nii.gz dtype from int16 to float32
+240301-22:23:54,387 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+240301-22:23:54,454 nipype.workflow INFO:
+	 [Node] Executing "skullstrip_first_pass" <nipype.interfaces.fsl.preprocess.BET>
+240301-22:23:54,633 nipype.workflow INFO:
+	 [Node] Finished "ds_boldref", elapsed time 0.297829s.
+240301-22:23:54,635 nipype.workflow INFO:
+	 [Job 56] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_coreg_boldref_wf.ds_boldref).
+240301-22:23:55,750 nipype.workflow INFO:
+	 [Node] Finished "skullstrip_first_pass", elapsed time 1.295037s.
+240301-22:23:56,220 nipype.workflow INFO:
+	 [Job 55] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass).
+240301-22:23:56,221 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:23:56,339 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_boldreg_wf.raw_sources" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/ds_boldreg_wf/raw_sources".
+240301-22:23:56,341 nipype.workflow INFO:
+	 [Node] Executing "raw_sources" <nipype.interfaces.utility.wrappers.Function>
+240301-22:23:56,342 nipype.workflow INFO:
+	 [Node] Finished "raw_sources", elapsed time 0.00038s.
+240301-22:23:56,343 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.first_dilate" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/first_dilate".
+240301-22:23:56,404 nipype.workflow INFO:
+	 [Node] Executing "first_dilate" <niworkflows.interfaces.nibabel.BinaryDilation>
+240301-22:23:57,9 nipype.workflow INFO:
+	 [Node] Finished "first_dilate", elapsed time 0.604863s.
+240301-22:23:58,222 nipype.workflow INFO:
+	 [Job 60] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.first_dilate).
+240301-22:23:58,223 nipype.workflow INFO:
+	 [Job 61] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.ds_boldreg_wf.raw_sources).
+240301-22:23:58,224 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:23:58,346 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.first_mask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/first_mask".
+240301-22:23:58,406 nipype.workflow INFO:
+	 [Node] Executing "first_mask" <niworkflows.interfaces.nibabel.ApplyMask>
+240301-22:23:58,465 nipype.workflow INFO:
+	 [Node] Finished "first_mask", elapsed time 0.058258s.
+240301-22:23:58,527 nipype.workflow INFO:
+	 [Node] Finished "lap_target", elapsed time 7.954469s.
+240301-22:24:00,224 nipype.workflow INFO:
+	 [Job 53] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.lap_target).
+240301-22:24:00,225 nipype.workflow INFO:
+	 [Job 65] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.first_mask).
+240301-22:24:00,226 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 32.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:24:00,336 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.init_aff" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/init_aff".
+240301-22:24:00,339 nipype.workflow INFO:
+	 [Node] Executing "init_aff" <nipype.interfaces.ants.utils.AI>
+240301-22:24:02,227 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 0/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.init_aff
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:24:16,795 nipype.workflow INFO:
+	 [Node] Finished "init_aff", elapsed time 16.282842s.
+240301-22:24:18,244 nipype.workflow INFO:
+	 [Job 57] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.init_aff).
+240301-22:24:18,245 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 32.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:24:18,364 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.mrg_target" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/mrg_target".
+240301-22:24:18,366 nipype.workflow INFO:
+	 [Node] Executing "mrg_target" <nipype.interfaces.utility.base.Merge>
+240301-22:24:18,367 nipype.workflow INFO:
+	 [Node] Finished "mrg_target", elapsed time 0.000159s.
+240301-22:24:18,397 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.unifize" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/unifize".
+240301-22:24:18,403 nipype.workflow INFO:
+	 [Node] Executing "unifize" <nipype.interfaces.afni.utils.Unifize>
+240301-22:24:20,250 nipype.workflow INFO:
+	 [Job 58] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.mrg_target).
+240301-22:24:20,251 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 32.30/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.unifize
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:28:13,645 nipype.workflow INFO:
+	 [Node] Finished "unifize", elapsed time 235.241157s.
+240301-22:28:14,625 nipype.workflow INFO:
+	 [Job 68] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.unifize).
+240301-22:28:14,627 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 32.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:28:14,743 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/norm".
+240301-22:28:14,750 nipype.workflow INFO:
+	 [Node] Executing "norm" <niworkflows.interfaces.fixes.FixHeaderRegistration>
+240301-22:28:16,628 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 29.50/37.50, Free processors: 0/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:34:47,49 nipype.workflow INFO:
+	 [Node] Finished "autorecon1", elapsed time 662.965386s.
+240301-22:34:47,51 nipype.workflow WARNING:
+	 [Node] Error on "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1" (/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/autorecon1)
+240301-22:34:47,289 nipype.workflow ERROR:
+	 Node autorecon1 failed to run on host c156-153.frontera.tacc.utexas.edu.
+240301-22:34:47,289 nipype.workflow ERROR:
+	 Saving crash info to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sub-403/log/20240301-222023_7f1e2649-e83c-4900-b0b6-74bad3618ec3/crash-20240301-223447-jbwexler-autorecon1-c1fd3c62-336d-43a9-9475-404d708c3f66.txt
+Traceback (most recent call last):
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node autorecon1.
+
+Cmdline:
+	recon-all -autorecon1 -i /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz -noskullstrip -noT2pial -noFLAIRpial -openmp 7 -subjid sub-403 -sd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+Stdout:
+	fs-check-version --s sub-403 --o /tmp/tmp.8KVvO8
+	Fri Mar  1 22:23:44 UTC 2024
+
+	setenv SUBJECTS_DIR /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+	cd /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/autorecon1
+	/opt/freesurfer/bin/fs-check-version --s sub-403 --o /tmp/tmp.8KVvO8
+	-rwxrwxr-x 1 nobody nogroup 18565 Aug  4  2022 /opt/freesurfer/bin/fs-check-version
+
+	freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	$Id$
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	pid 219722
+	Current FS Version freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	Subject does not have a bstampfile, copying /opt/freesurfer/build-stamp.txt
+	Subject FS Version: freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	No constraints on version because REQ=UnSet and FsVerFile=NotThere
+	#@#% fs-check-version match = 1
+	fs-check-version Done
+	INFO: SUBJECTS_DIR is /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+	Actual FREESURFER_HOME /opt/freesurfer
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403
+
+	 mri_convert /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz 
+
+	mri_convert /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz 
+	reading from /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (1, 0, 0)
+	j_ras = (0, 1, 0)
+	k_ras = (-0, -0, 1)
+	writing to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz...
+	#--------------------------------------------
+	#@# MotionCor Fri Mar  1 22:23:52 UTC 2024
+	Found 1 runs
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz
+	Checking for (invalid) multi-frame inputs...
+	Only one run found so motion
+	correction will not be performed. I'll
+	copy the run to rawavg and continue.
+
+	 cp /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz 
+
+
+	 mri_info /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz 
+
+	rawavg.mgz ========================================
+	Volume information for /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz
+	          type: MGH
+	    dimensions: 164 x 256 x 256
+	   voxel sizes: 1.100006, 1.000000, 1.000000
+	          type: FLOAT (3)
+	           fov: 256.000
+	           dof: 1
+	        xstart: -90.2, xend: 90.2
+	        ystart: -128.0, yend: 128.0
+	        zstart: -128.0, zend: 128.0
+	            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+	       nframes: 1
+	       PhEncDir: UNKNOWN
+	       FieldStrength: 0.000000
+	ras xform present
+	    xform info: x_r =   1.0000, y_r =   0.0000, z_r =  -0.0000, c_r =    -1.2199
+	              : x_a =   0.0000, y_a =   1.0000, z_a =  -0.0000, c_a =    22.2580
+	              : x_s =   0.0000, y_s =   0.0000, z_s =   1.0000, c_s =   -28.8124
+
+	talairach xfm : 
+	Orientation   : RAS
+	Primary Slice Direction: axial
+
+	voxel to ras transform:
+	                1.1000   0.0000  -0.0000   -91.4204
+	                0.0000   1.0000  -0.0000  -105.7420
+	                0.0000   0.0000   1.0000  -156.8124
+	                0.0000   0.0000   0.0000     1.0000
+
+	voxel-to-ras determinant 1.10001
+
+	ras to voxel transform:
+	                0.9091   0.0000   0.0000    83.1090
+	                0.0000   1.0000   0.0000   105.7420
+	                0.0000   0.0000   1.0000   156.8124
+	                0.0000   0.0000   0.0000     1.0000
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403
+
+	 mri_convert /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz --conform 
+
+	mri_convert /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz --conform 
+	reading from /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (1, 0, 0)
+	j_ras = (0, 1, 0)
+	k_ras = (-0, -0, 1)
+	changing data type from float to uchar (noscale = 0)...
+	MRIchangeType: Building histogram 0 7670.09 1000, flo=0, fhi=0.999, dest_type=0
+	Reslicing using trilinear interpolation 
+	writing to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz...
+
+	 mri_add_xform_to_header -c /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talairach.xfm /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz 
+
+	INFO: extension is mgz
+
+	 mri_info /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz 
+
+	orig.mgz ========================================
+	Volume information for /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz
+	          type: MGH
+	    dimensions: 256 x 256 x 256
+	   voxel sizes: 1.000000, 1.000000, 1.000000
+	          type: UCHAR (0)
+	           fov: 256.000
+	           dof: 1
+	        xstart: -128.0, xend: 128.0
+	        ystart: -128.0, yend: 128.0
+	        zstart: -128.0, zend: 128.0
+	            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+	       nframes: 1
+	       PhEncDir: UNKNOWN
+	       FieldStrength: 0.000000
+	ras xform present
+	    xform info: x_r =  -1.0000, y_r =   0.0000, z_r =   0.0000, c_r =    -1.2199
+	              : x_a =   0.0000, y_a =   0.0000, z_a =   1.0000, c_a =    22.2580
+	              : x_s =   0.0000, y_s =  -1.0000, z_s =   0.0000, c_s =   -28.8124
+
+	talairach xfm : /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talairach.xfm
+	Orientation   : LIA
+	Primary Slice Direction: coronal
+
+	voxel to ras transform:
+	               -1.0000   0.0000   0.0000   126.7801
+	                0.0000   0.0000   1.0000  -105.7420
+	                0.0000  -1.0000   0.0000    99.1876
+	                0.0000   0.0000   0.0000     1.0000
+
+	voxel-to-ras determinant -1
+
+	ras to voxel transform:
+	               -1.0000  -0.0000  -0.0000   126.7801
+	               -0.0000  -0.0000  -1.0000    99.1876
+	               -0.0000   1.0000  -0.0000   105.7420
+	               -0.0000  -0.0000  -0.0000     1.0000
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:23:59 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:23:59 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.220709
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.220709/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.220709/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.220709/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.220709/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:27:19 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+	talairach_avi log file is transforms/talairach_avi.log...
+	mv -f /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+	Started at Fri Mar 1 22:27:20 UTC 2024
+	Ended   at Fri Mar  1 22:27:39 UTC 2024
+	talairach_avi done
+
+	 cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+	lta_convert --src orig.mgz --trg /opt/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+	7.3.2
+
+	--src: orig.mgz src image (geometry).
+	--trg: /opt/freesurfer/average/mni305.cor.mgz trg image (geometry).
+	--inmni: transforms/talairach.xfm input MNI/XFM transform.
+	--outlta: transforms/talairach.xfm.lta output LTA.
+	--s: fsaverage subject name
+	--ltavox2vox: output LTA as VOX_TO_VOX transform.
+	 LTA read, type : 1
+	 1.13374  -0.00115  -0.02918   1.64484;
+	-0.04513   2.21198  -0.57857  -12.11221;
+	 0.06124  -1.17694   1.76760   12.16263;
+	 0.00000   0.00000   0.00000   1.00000;
+	setting subject to fsaverage
+	Writing  LTA to file transforms/talairach.xfm.lta...
+	lta_convert successful.
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	#--------------------------------------------
+	#@# Talairach Failure Detection Fri Mar  1 22:27:41 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+	ERROR: talairach_afd: Talairach Transform: transforms/talairach.xfm ***FAILED*** (p=0.0000, pval=0.0000 < threshold=0.0050)
+
+	Manual Talairach alignment may be necessary, or
+	include the -notal-check flag to skip this test,
+	making sure the -notal-check flag follows -all
+	or -autorecon1 in the command string.
+	See:
+
+	http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Talairach
+
+	INFO: Retrying Talairach align using 3T-based atlas...
+
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:27:41 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:27:42 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.227797
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.227797/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.227797/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.227797/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.227797/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:31:02 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm --atlas 3T18yoSchwartzReactN32_as_orig 
+
+	talairach_avi log file is transforms/talairach_avi.log...
+	mv -f /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/talsrcimg_to_3T18yoSchwartzReactN32_as_orig_t4_vox2vox.txt /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talsrcimg_to_3T18yoSchwartzReactN32_as_orig_t4_vox2vox.txt
+	Started at Fri Mar 1 22:31:02 UTC 2024
+	Ended   at Fri Mar  1 22:31:23 UTC 2024
+	talairach_avi done
+
+	 cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+	lta_convert --src orig.mgz --trg /opt/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+	7.3.2
+
+	--src: orig.mgz src image (geometry).
+	--trg: /opt/freesurfer/average/mni305.cor.mgz trg image (geometry).
+	--inmni: transforms/talairach.xfm input MNI/XFM transform.
+	--outlta: transforms/talairach.xfm.lta output LTA.
+	--s: fsaverage subject name
+	--ltavox2vox: output LTA as VOX_TO_VOX transform.
+	 LTA read, type : 1
+	 1.17081  -0.02389  -0.18401   6.02785;
+	-0.07283   0.98126  -1.13649  -17.85912;
+	 0.06249   0.60265   1.86808  -28.24767;
+	 0.00000   0.00000   0.00000   1.00000;
+	setting subject to fsaverage
+	Writing  LTA to file transforms/talairach.xfm.lta...
+	lta_convert successful.
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	#--------------------------------------------
+	#@# Talairach Failure Detection Fri Mar  1 22:31:25 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+	ERROR: talairach_afd: Talairach Transform: transforms/talairach.xfm ***FAILED*** (p=0.0009, pval=0.0000 < threshold=0.0050)
+
+	Manual Talairach alignment may be necessary, or
+	include the -notal-check flag to skip this test,
+	making sure the -notal-check flag follows -all
+	or -autorecon1 in the command string.
+	See:
+
+	http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Talairach
+
+	INFO: Trying MINC mritotal to perform Talairach align...
+
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:31:25 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:31:25 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.234764
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.234764/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.234764/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.234764/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.234764/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:34:45 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/talairach
+	--i orig_nu.mgz --xfm transforms/talairach.auto.xfm
+	talairach 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:34:45 UTC 2024
+	tmpdir is transforms/tmp.talairach.240368
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	mri_convert orig_nu.mgz transforms/tmp.talairach.240368/src.mnc
+	mri_convert orig_nu.mgz transforms/tmp.talairach.240368/src.mnc 
+	reading from orig_nu.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	writing to transforms/tmp.talairach.240368/src.mnc...
+	--------------------------------------------
+	mritotal -verbose -debug -clobber -modeldir /opt/freesurfer/mni/bin/../share/mni_autoreg -protocol icbm transforms/tmp.talairach.240368/src.mnc transforms/talairach.auto.xfm
+	spawn: exec of mincinfo failed: No such file or directory
+	mritotal: crashed while running mincinfo (termination status=65280)
+	ERROR: mritotal failed, see transforms/talairach.log
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+	recon-all -s sub-403 exited with ERRORS at Fri Mar  1 22:34:46 UTC 2024
+
+	For more details, see the log file /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/scripts/recon-all.log
+	To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Stderr:
+
+Traceback:
+	RuntimeError: subprocess exited with code 1.
+
+240301-22:34:47,292 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:34:47,397 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+240301-22:34:47,432 nipype.workflow INFO:
+	 [Node] Executing "fixhdr_unifize" <niworkflows.interfaces.header.CopyXForm>
+240301-22:34:47,497 nipype.workflow INFO:
+	 [Node] Finished "fixhdr_unifize", elapsed time 0.064571s.
+240301-22:34:49,291 nipype.workflow INFO:
+	 [Job 71] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize).
+240301-22:34:49,293 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:34:49,437 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+240301-22:34:49,443 nipype.workflow INFO:
+	 [Node] Executing "skullstrip_second_pass" <nipype.interfaces.afni.preprocess.Automask>
+240301-22:34:49,742 nipype.workflow INFO:
+	 [Node] Finished "skullstrip_second_pass", elapsed time 0.298594s.
+240301-22:34:51,293 nipype.workflow INFO:
+	 [Job 75] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass).
+240301-22:34:51,295 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:34:51,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+240301-22:34:51,441 nipype.workflow INFO:
+	 [Node] Executing "fixhdr_skullstrip2" <niworkflows.interfaces.header.CopyXForm>
+240301-22:34:51,470 nipype.workflow INFO:
+	 [Node] Finished "fixhdr_skullstrip2", elapsed time 0.028381s.
+240301-22:34:53,297 nipype.workflow INFO:
+	 [Job 77] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2).
+240301-22:34:53,298 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:34:53,409 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+240301-22:34:53,415 nipype.workflow INFO:
+	 [Node] Executing "combine_masks" <nipype.interfaces.fsl.maths.BinaryMaths>
+240301-22:34:53,534 nipype.workflow INFO:
+	 [Node] Finished "combine_masks", elapsed time 0.117903s.
+240301-22:34:55,300 nipype.workflow INFO:
+	 [Job 79] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.combine_masks).
+240301-22:34:55,302 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:34:55,412 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/bold_task_vocal_wf/bold_fit_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+240301-22:34:55,414 nipype.workflow INFO:
+	 [Node] Executing "apply_mask" <niworkflows.interfaces.nibabel.ApplyMask>
+240301-22:34:55,472 nipype.workflow INFO:
+	 [Node] Finished "apply_mask", elapsed time 0.057596s.
+240301-22:34:57,307 nipype.workflow INFO:
+	 [Job 82] Completed (fmriprep_23_2_wf.sub_403_wf.bold_task_vocal_wf.bold_fit_wf.enhance_and_skullstrip_bold_wf.apply_mask).
+240301-22:34:57,308 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm
+240301-22:35:00,797 nipype.workflow INFO:
+	 [Node] Finished "norm", elapsed time 406.045241s.
+240301-22:35:01,315 nipype.workflow INFO:
+	 [Job 62] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.norm).
+240301-22:35:01,317 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:01,423 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_brainmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/map_brainmask".
+240301-22:35:01,423 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_wmmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/map_wmmask".
+240301-22:35:01,428 nipype.workflow INFO:
+	 [Node] Executing "map_wmmask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+240301-22:35:01,431 nipype.workflow INFO:
+	 [Node] Executing "map_brainmask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+240301-22:35:03,322 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 35.50/37.50, Free processors: 12/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_wmmask
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_brainmask
+240301-22:35:16,624 nipype.workflow INFO:
+	 [Node] Finished "map_brainmask", elapsed time 15.192823s.
+240301-22:35:16,756 nipype.workflow INFO:
+	 [Node] Finished "map_wmmask", elapsed time 15.327791s.
+240301-22:35:17,357 nipype.workflow INFO:
+	 [Job 66] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_brainmask).
+240301-22:35:17,357 nipype.workflow INFO:
+	 [Job 67] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.map_wmmask).
+240301-22:35:17,359 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:17,465 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.thr_brainmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/thr_brainmask".
+240301-22:35:17,467 nipype.workflow INFO:
+	 [Node] Executing "thr_brainmask" <nipype.interfaces.ants.utils.ThresholdImage>
+240301-22:35:17,470 nipype.workflow INFO:
+	 [Node] Setting-up "_inu_n4_final0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/inu_n4_final/mapflow/_inu_n4_final0".
+240301-22:35:17,471 nipype.workflow INFO:
+	 [Node] Executing "_inu_n4_final0" <nipype.interfaces.ants.segmentation.N4BiasFieldCorrection>
+240301-22:35:18,272 nipype.workflow INFO:
+	 [Node] Finished "thr_brainmask", elapsed time 0.804886s.
+240301-22:35:19,359 nipype.workflow INFO:
+	 [Job 69] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.thr_brainmask).
+240301-22:35:19,360 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4_final
+240301-22:35:19,487 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.dil_brainmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/dil_brainmask".
+240301-22:35:19,487 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.03_pad_mask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/03_pad_mask".
+240301-22:35:19,489 nipype.workflow INFO:
+	 [Node] Executing "03_pad_mask" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:19,489 nipype.workflow INFO:
+	 [Node] Executing "dil_brainmask" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:20,136 nipype.workflow INFO:
+	 [Node] Finished "03_pad_mask", elapsed time 0.646611s.
+240301-22:35:20,616 nipype.workflow INFO:
+	 [Node] Finished "dil_brainmask", elapsed time 1.126215s.
+240301-22:35:21,363 nipype.workflow INFO:
+	 [Job 72] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.dil_brainmask).
+240301-22:35:21,364 nipype.workflow INFO:
+	 [Job 73] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.03_pad_mask).
+240301-22:35:21,365 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4_final
+240301-22:35:21,476 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.get_brainmask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/get_brainmask".
+240301-22:35:21,478 nipype.workflow INFO:
+	 [Node] Executing "get_brainmask" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:22,444 nipype.workflow INFO:
+	 [Node] Finished "get_brainmask", elapsed time 0.966149s.
+240301-22:35:23,368 nipype.workflow INFO:
+	 [Job 76] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.get_brainmask).
+240301-22:35:23,369 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4_final
+240301-22:35:31,201 nipype.workflow INFO:
+	 [Node] Finished "_inu_n4_final0", elapsed time 13.729618s.
+240301-22:35:31,386 nipype.workflow INFO:
+	 [Job 70] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.inu_n4_final).
+240301-22:35:31,388 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:31,494 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.01_atropos" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/01_atropos".
+240301-22:35:31,497 nipype.workflow INFO:
+	 [Node] Executing "01_atropos" <nipype.interfaces.ants.segmentation.Atropos>
+240301-22:35:31,502 nipype.workflow INFO:
+	 [Node] Setting-up "_apply_mask0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/apply_mask/mapflow/_apply_mask0".
+240301-22:35:31,503 nipype.workflow INFO:
+	 [Node] Executing "_apply_mask0" <niworkflows.interfaces.nibabel.ApplyMask>
+240301-22:35:32,24 nipype.workflow INFO:
+	 [Node] Finished "_apply_mask0", elapsed time 0.520047s.
+240301-22:35:33,393 nipype.workflow INFO:
+	 [Job 74] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.apply_mask).
+240301-22:35:33,394 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 34.50/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.01_atropos
+240301-22:35:54,81 nipype.workflow INFO:
+	 [Node] Finished "01_atropos", elapsed time 22.583425s.
+240301-22:35:55,438 nipype.workflow INFO:
+	 [Job 78] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.01_atropos).
+240301-22:35:55,439 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:55,538 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.match_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/match_wm".
+240301-22:35:55,539 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.02_pad_segm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/02_pad_segm".
+240301-22:35:55,541 nipype.workflow INFO:
+	 [Node] Executing "match_wm" <nipype.interfaces.utility.wrappers.Function>
+240301-22:35:55,541 nipype.workflow INFO:
+	 [Node] Executing "02_pad_segm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:55,541 nipype.workflow INFO:
+	 [Node] Finished "match_wm", elapsed time 0.000258s.
+240301-22:35:55,543 nipype.workflow INFO:
+	 [Job 81] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.match_wm).
+240301-22:35:56,285 nipype.workflow INFO:
+	 [Node] Finished "02_pad_segm", elapsed time 0.743851s.
+240301-22:35:57,444 nipype.workflow INFO:
+	 [Job 80] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.02_pad_segm).
+240301-22:35:57,445 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:57,548 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.overlap" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/overlap".
+240301-22:35:57,549 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.04_sel_labels" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/04_sel_labels".
+240301-22:35:57,550 nipype.workflow INFO:
+	 [Node] Executing "04_sel_labels" <nipype.interfaces.utility.wrappers.Function>
+240301-22:35:57,551 nipype.workflow INFO:
+	 [Node] Executing "overlap" <nipype.algorithms.metrics.FuzzyOverlap>
+240301-22:35:57,817 nipype.workflow INFO:
+	 [Node] Finished "04_sel_labels", elapsed time 0.266405s.
+240301-22:35:59,542 nipype.workflow INFO:
+	 [Node] Finished "overlap", elapsed time 1.990336s.
+240301-22:35:59,543 nipype.workflow INFO:
+	 [Job 84] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.overlap).
+240301-22:35:59,693 nipype.workflow INFO:
+	 [Job 83] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.04_sel_labels).
+240301-22:35:59,694 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 5 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:35:59,814 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.05_get_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/05_get_wm".
+240301-22:35:59,814 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.06_get_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/06_get_gm".
+240301-22:35:59,814 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.sel_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/sel_wm".
+240301-22:35:59,815 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.10_me_csf" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/10_me_csf".
+240301-22:35:59,815 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.27_depad_csf" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/27_depad_csf".
+240301-22:35:59,816 nipype.workflow INFO:
+	 [Node] Executing "06_get_gm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:59,816 nipype.workflow INFO:
+	 [Node] Executing "05_get_wm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:59,817 nipype.workflow INFO:
+	 [Node] Executing "sel_wm" <nipype.interfaces.utility.base.Select>
+240301-22:35:59,817 nipype.workflow INFO:
+	 [Node] Executing "10_me_csf" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:59,818 nipype.workflow INFO:
+	 [Node] Executing "27_depad_csf" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:35:59,818 nipype.workflow INFO:
+	 [Node] Finished "sel_wm", elapsed time 0.000196s.
+240301-22:35:59,819 nipype.workflow INFO:
+	 [Job 89] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.sel_wm).
+240301-22:36:00,393 nipype.workflow INFO:
+	 [Node] Finished "27_depad_csf", elapsed time 0.5744s.
+240301-22:36:01,58 nipype.workflow INFO:
+	 [Node] Finished "05_get_wm", elapsed time 1.241337s.
+240301-22:36:01,58 nipype.workflow INFO:
+	 [Node] Finished "06_get_gm", elapsed time 1.242058s.
+240301-22:36:01,696 nipype.workflow INFO:
+	 [Job 85] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.05_get_wm).
+240301-22:36:01,697 nipype.workflow INFO:
+	 [Job 86] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.06_get_gm).
+240301-22:36:01,697 nipype.workflow INFO:
+	 [Job 88] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.27_depad_csf).
+240301-22:36:01,699 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.10_me_csf
+240301-22:36:01,870 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.copy_xform_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/copy_xform_wm".
+240301-22:36:01,870 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.07_fill_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/07_fill_gm".
+240301-22:36:01,870 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.09_relabel_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/09_relabel_wm".
+240301-22:36:01,872 nipype.workflow INFO:
+	 [Node] Executing "07_fill_gm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:01,872 nipype.workflow INFO:
+	 [Node] Executing "09_relabel_wm" <nipype.interfaces.ants.utils.MultiplyImages>
+240301-22:36:01,874 nipype.workflow INFO:
+	 [Node] Executing "copy_xform_wm" <niworkflows.interfaces.header.CopyXForm>
+240301-22:36:02,253 nipype.workflow INFO:
+	 [Node] Finished "copy_xform_wm", elapsed time 0.378076s.
+240301-22:36:02,255 nipype.workflow INFO:
+	 [Job 92] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.copy_xform_wm).
+240301-22:36:02,535 nipype.workflow INFO:
+	 [Node] Finished "09_relabel_wm", elapsed time 0.662526s.
+240301-22:36:03,286 nipype.workflow INFO:
+	 [Node] Finished "10_me_csf", elapsed time 3.467481s.
+240301-22:36:03,697 nipype.workflow INFO:
+	 [Job 87] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.10_me_csf).
+240301-22:36:03,698 nipype.workflow INFO:
+	 [Job 90] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.09_relabel_wm).
+240301-22:36:03,700 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.07_fill_gm
+240301-22:36:03,807 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.26_depad_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/26_depad_wm".
+240301-22:36:03,807 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.apply_wm_prior" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/apply_wm_prior".
+240301-22:36:03,809 nipype.workflow INFO:
+	 [Node] Executing "26_depad_wm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:03,810 nipype.workflow INFO:
+	 [Node] Executing "apply_wm_prior" <nipype.interfaces.utility.wrappers.Function>
+240301-22:36:04,370 nipype.workflow INFO:
+	 [Node] Finished "apply_wm_prior", elapsed time 0.559606s.
+240301-22:36:04,527 nipype.workflow INFO:
+	 [Node] Finished "26_depad_wm", elapsed time 0.717618s.
+240301-22:36:05,699 nipype.workflow INFO:
+	 [Job 93] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.26_depad_wm).
+240301-22:36:05,700 nipype.workflow INFO:
+	 [Job 95] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.apply_wm_prior).
+240301-22:36:05,702 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.07_fill_gm
+240301-22:36:05,824 nipype.workflow INFO:
+	 [Node] Setting-up "_inu_n4_final0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/inu_n4_final/mapflow/_inu_n4_final0".
+240301-22:36:05,825 nipype.workflow INFO:
+	 [Node] Executing "_inu_n4_final0" <nipype.interfaces.ants.segmentation.N4BiasFieldCorrection>
+240301-22:36:07,707 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 37.10/37.50, Free processors: 6/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.07_fill_gm
+240301-22:36:11,72 nipype.workflow INFO:
+	 [Node] Finished "07_fill_gm", elapsed time 9.199729s.
+240301-22:36:11,714 nipype.workflow INFO:
+	 [Job 91] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.07_fill_gm).
+240301-22:36:11,715 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final
+240301-22:36:11,827 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.08_mult_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/08_mult_gm".
+240301-22:36:11,830 nipype.workflow INFO:
+	 [Node] Executing "08_mult_gm" <nipype.interfaces.ants.utils.MultiplyImages>
+240301-22:36:12,589 nipype.workflow INFO:
+	 [Node] Finished "08_mult_gm", elapsed time 0.758667s.
+240301-22:36:13,717 nipype.workflow INFO:
+	 [Job 94] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.08_mult_gm).
+240301-22:36:13,719 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final
+240301-22:36:13,822 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.11_add_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/11_add_gm".
+240301-22:36:13,824 nipype.workflow INFO:
+	 [Node] Executing "11_add_gm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:15,155 nipype.workflow INFO:
+	 [Node] Finished "11_add_gm", elapsed time 1.330579s.
+240301-22:36:15,724 nipype.workflow INFO:
+	 [Job 96] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.11_add_gm).
+240301-22:36:15,725 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final
+240301-22:36:15,830 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.12_relabel_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/12_relabel_gm".
+240301-22:36:15,832 nipype.workflow INFO:
+	 [Node] Executing "12_relabel_gm" <nipype.interfaces.ants.utils.MultiplyImages>
+240301-22:36:16,486 nipype.workflow INFO:
+	 [Node] Finished "12_relabel_gm", elapsed time 0.653429s.
+240301-22:36:17,729 nipype.workflow INFO:
+	 [Job 98] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.12_relabel_gm).
+240301-22:36:17,730 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 7/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final
+240301-22:36:17,835 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.13_add_gm_wm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/13_add_gm_wm".
+240301-22:36:17,835 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.25_depad_gm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/25_depad_gm".
+240301-22:36:17,837 nipype.workflow INFO:
+	 [Node] Executing "25_depad_gm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:17,840 nipype.workflow INFO:
+	 [Node] Executing "13_add_gm_wm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:18,599 nipype.workflow INFO:
+	 [Node] Finished "25_depad_gm", elapsed time 0.76052s.
+240301-22:36:19,291 nipype.workflow INFO:
+	 [Node] Finished "13_add_gm_wm", elapsed time 1.4496660000000001s.
+240301-22:36:19,621 nipype.workflow INFO:
+	 [Node] Finished "_inu_n4_final0", elapsed time 13.794839s.
+240301-22:36:19,732 nipype.workflow INFO:
+	 [Job 97] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.inu_n4_final).
+240301-22:36:19,733 nipype.workflow INFO:
+	 [Job 99] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.13_add_gm_wm).
+240301-22:36:19,734 nipype.workflow INFO:
+	 [Job 100] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.25_depad_gm).
+240301-22:36:19,735 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:19,835 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.14_sel_labels2" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/14_sel_labels2".
+240301-22:36:19,836 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.24_depad_segm" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/24_depad_segm".
+240301-22:36:19,836 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.merge_tpms" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/merge_tpms".
+240301-22:36:19,837 nipype.workflow INFO:
+	 [Node] Executing "14_sel_labels2" <nipype.interfaces.utility.wrappers.Function>
+240301-22:36:19,837 nipype.workflow INFO:
+	 [Node] Executing "24_depad_segm" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:19,839 nipype.workflow INFO:
+	 [Node] Executing "merge_tpms" <nipype.interfaces.utility.base.Merge>
+240301-22:36:19,840 nipype.workflow INFO:
+	 [Node] Finished "merge_tpms", elapsed time 0.000206s.
+240301-22:36:19,990 nipype.workflow INFO:
+	 [Node] Finished "14_sel_labels2", elapsed time 0.152654s.
+240301-22:36:20,511 nipype.workflow INFO:
+	 [Node] Finished "24_depad_segm", elapsed time 0.672772s.
+240301-22:36:21,735 nipype.workflow INFO:
+	 [Job 101] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.14_sel_labels2).
+240301-22:36:21,736 nipype.workflow INFO:
+	 [Job 102] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.24_depad_segm).
+240301-22:36:21,736 nipype.workflow INFO:
+	 [Job 103] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.merge_tpms).
+240301-22:36:21,738 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:21,865 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.15_add_7" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/15_add_7".
+240301-22:36:21,867 nipype.workflow INFO:
+	 [Node] Executing "15_add_7" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:22,963 nipype.workflow INFO:
+	 [Node] Finished "15_add_7", elapsed time 1.095646s.
+240301-22:36:23,740 nipype.workflow INFO:
+	 [Job 104] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.15_add_7).
+240301-22:36:23,741 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:23,856 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.16_me_7" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/16_me_7".
+240301-22:36:23,858 nipype.workflow INFO:
+	 [Node] Executing "16_me_7" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:25,747 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.16_me_7
+240301-22:36:26,492 nipype.workflow INFO:
+	 [Node] Finished "16_me_7", elapsed time 2.6331569999999997s.
+240301-22:36:27,752 nipype.workflow INFO:
+	 [Job 105] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.16_me_7).
+240301-22:36:27,754 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:27,867 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.17_comp_7" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/17_comp_7".
+240301-22:36:27,869 nipype.workflow INFO:
+	 [Node] Executing "17_comp_7" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:29,90 nipype.workflow INFO:
+	 [Node] Finished "17_comp_7", elapsed time 1.219779s.
+240301-22:36:29,755 nipype.workflow INFO:
+	 [Job 106] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.17_comp_7).
+240301-22:36:29,756 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:29,874 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.18_md_7" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/18_md_7".
+240301-22:36:29,876 nipype.workflow INFO:
+	 [Node] Executing "18_md_7" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:31,216 nipype.workflow INFO:
+	 [Node] Finished "18_md_7", elapsed time 1.3394249999999999s.
+240301-22:36:31,757 nipype.workflow INFO:
+	 [Job 107] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.18_md_7).
+240301-22:36:31,758 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:31,875 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.19_fill_7" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/19_fill_7".
+240301-22:36:31,877 nipype.workflow INFO:
+	 [Node] Executing "19_fill_7" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:33,760 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.19_fill_7
+240301-22:36:40,758 nipype.workflow INFO:
+	 [Node] Finished "19_fill_7", elapsed time 8.880064s.
+240301-22:36:41,785 nipype.workflow INFO:
+	 [Job 108] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.19_fill_7).
+240301-22:36:41,786 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:41,903 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.20_add_7_2" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/20_add_7_2".
+240301-22:36:41,906 nipype.workflow INFO:
+	 [Node] Executing "20_add_7_2" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:43,184 nipype.workflow INFO:
+	 [Node] Finished "20_add_7_2", elapsed time 1.277716s.
+240301-22:36:43,791 nipype.workflow INFO:
+	 [Job 109] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.20_add_7_2).
+240301-22:36:43,792 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:43,913 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.21_md_7_2" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/21_md_7_2".
+240301-22:36:43,915 nipype.workflow INFO:
+	 [Node] Executing "21_md_7_2" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:45,327 nipype.workflow INFO:
+	 [Node] Finished "21_md_7_2", elapsed time 1.411838s.
+240301-22:36:45,794 nipype.workflow INFO:
+	 [Job 110] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.21_md_7_2).
+240301-22:36:45,796 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:45,916 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.22_me_7_2" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/22_me_7_2".
+240301-22:36:45,917 nipype.workflow INFO:
+	 [Node] Executing "22_me_7_2" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:47,801 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 37.30/37.50, Free processors: 13/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.22_me_7_2
+240301-22:36:48,611 nipype.workflow INFO:
+	 [Node] Finished "22_me_7_2", elapsed time 2.693357s.
+240301-22:36:49,807 nipype.workflow INFO:
+	 [Job 111] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.22_me_7_2).
+240301-22:36:49,809 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:49,914 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.23_depad_mask" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/23_depad_mask".
+240301-22:36:49,916 nipype.workflow INFO:
+	 [Node] Executing "23_depad_mask" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:36:50,537 nipype.workflow INFO:
+	 [Node] Finished "23_depad_mask", elapsed time 0.620119s.
+240301-22:36:51,809 nipype.workflow INFO:
+	 [Job 112] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.23_depad_mask).
+240301-22:36:51,810 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:51,920 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.msk_conform" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/msk_conform".
+240301-22:36:51,923 nipype.workflow INFO:
+	 [Node] Executing "msk_conform" <nipype.interfaces.utility.wrappers.Function>
+240301-22:36:52,106 nipype.workflow INFO:
+	 [Node] Finished "msk_conform", elapsed time 0.182313s.
+240301-22:36:53,811 nipype.workflow INFO:
+	 [Job 113] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.msk_conform).
+240301-22:36:53,813 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:53,917 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.copy_xform" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/copy_xform".
+240301-22:36:53,920 nipype.workflow INFO:
+	 [Node] Executing "copy_xform" <niworkflows.interfaces.header.CopyXForm>
+240301-22:36:58,121 nipype.workflow INFO:
+	 [Node] Finished "copy_xform", elapsed time 4.199987s.
+240301-22:36:58,123 nipype.workflow INFO:
+	 [Job 114] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.copy_xform).
+240301-22:36:58,250 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 4 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:36:58,359 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_template_wf.ds_t1w_preproc" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/ds_template_wf/ds_t1w_preproc".
+240301-22:36:58,362 nipype.workflow INFO:
+	 [Node] Setting-up "_apply_mask0" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/brain_extraction_wf/atropos_wf/apply_mask/mapflow/_apply_mask0".
+240301-22:36:58,363 nipype.workflow INFO:
+	 [Node] Executing "_apply_mask0" <niworkflows.interfaces.nibabel.ApplyMask>
+240301-22:36:58,363 nipype.workflow INFO:
+	 [Node] Executing "ds_t1w_preproc" <smriprep.interfaces.DerivativesDataSink>
+240301-22:36:58,876 nipype.workflow INFO:
+	 [Node] Finished "_apply_mask0", elapsed time 0.512136s.
+240301-22:37:00,445 nipype.workflow INFO:
+	 [Node] Finished "ds_t1w_preproc", elapsed time 2.080891s.
+240301-22:37:00,447 nipype.workflow INFO:
+	 [Job 116] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.ds_template_wf.ds_t1w_preproc).
+240301-22:37:00,564 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin2009cAsym/trunc_mov".
+240301-22:37:00,564 nipype.workflow INFO:
+	 [Job 115] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.brain_extraction_wf.atropos_wf.apply_mask).
+240301-22:37:00,565 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov" in "/node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/register_template_wf/_template_MNI152NLin6Asym/trunc_mov".
+240301-22:37:00,566 nipype.workflow INFO:
+	 [Node] Executing "trunc_mov" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:37:00,566 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 37.10/37.50, Free processors: 12/14.
+                     Currently running:
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov
+                       * fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov
+240301-22:37:00,567 nipype.workflow INFO:
+	 [Node] Executing "trunc_mov" <nipype.interfaces.ants.utils.ImageMath>
+240301-22:37:04,162 nipype.workflow INFO:
+	 [Node] Finished "trunc_mov", elapsed time 3.595045s.
+240301-22:37:04,169 nipype.workflow INFO:
+	 [Node] Finished "trunc_mov", elapsed time 3.6017s.
+240301-22:37:04,573 nipype.workflow INFO:
+	 [Job 117] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov).
+240301-22:37:04,574 nipype.workflow INFO:
+	 [Job 118] Completed (fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.register_template_wf.trunc_mov).
+240301-22:37:04,575 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 37.50/37.50, Free processors: 14/14.
+240301-22:37:06,579 nipype.workflow INFO:
+	 ***********************************
+240301-22:37:06,579 nipype.workflow ERROR:
+	 could not run node: fmriprep_23_2_wf.sub_403_wf.anat_fit_wf.surface_recon_wf.autorecon1
+240301-22:37:06,579 nipype.workflow INFO:
+	 crashfile: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sub-403/log/20240301-222023_7f1e2649-e83c-4900-b0b6-74bad3618ec3/crash-20240301-223447-jbwexler-autorecon1-c1fd3c62-336d-43a9-9475-404d708c3f66.txt
+240301-22:37:06,579 nipype.workflow INFO:
+	 ***********************************
+240301-22:37:06,595 nipype.workflow CRITICAL:
+	 fMRIPrep failed: Traceback (most recent call last):
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/opt/conda/envs/fmriprep/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node autorecon1.
+
+Cmdline:
+	recon-all -autorecon1 -i /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz -noskullstrip -noT2pial -noFLAIRpial -openmp 7 -subjid sub-403 -sd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+Stdout:
+	fs-check-version --s sub-403 --o /tmp/tmp.8KVvO8
+	Fri Mar  1 22:23:44 UTC 2024
+
+	setenv SUBJECTS_DIR /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+	cd /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/surface_recon_wf/autorecon1
+	/opt/freesurfer/bin/fs-check-version --s sub-403 --o /tmp/tmp.8KVvO8
+	-rwxrwxr-x 1 nobody nogroup 18565 Aug  4  2022 /opt/freesurfer/bin/fs-check-version
+
+	freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	$Id$
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	pid 219722
+	Current FS Version freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	Subject does not have a bstampfile, copying /opt/freesurfer/build-stamp.txt
+	Subject FS Version: freesurfer-linux-ubuntu22_x86_64-7.3.2-20220804-6354275
+	No constraints on version because REQ=UnSet and FsVerFile=NotThere
+	#@#% fs-check-version match = 1
+	fs-check-version Done
+	INFO: SUBJECTS_DIR is /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer
+	Actual FREESURFER_HOME /opt/freesurfer
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403
+
+	 mri_convert /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz 
+
+	mri_convert /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz 
+	reading from /node_tmp/work_dir/fmriprep/ds003146_sub-403/fmriprep_23_2_wf/sub_403_wf/anat_fit_wf/anat_template_wf/denoise/mapflow/_denoise0/sub-403_T1w_noise_corrected.nii.gz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (1, 0, 0)
+	j_ras = (0, 1, 0)
+	k_ras = (-0, -0, 1)
+	writing to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz...
+	#--------------------------------------------
+	#@# MotionCor Fri Mar  1 22:23:52 UTC 2024
+	Found 1 runs
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz
+	Checking for (invalid) multi-frame inputs...
+	Only one run found so motion
+	correction will not be performed. I'll
+	copy the run to rawavg and continue.
+
+	 cp /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig/001.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz 
+
+
+	 mri_info /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz 
+
+	rawavg.mgz ========================================
+	Volume information for /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz
+	          type: MGH
+	    dimensions: 164 x 256 x 256
+	   voxel sizes: 1.100006, 1.000000, 1.000000
+	          type: FLOAT (3)
+	           fov: 256.000
+	           dof: 1
+	        xstart: -90.2, xend: 90.2
+	        ystart: -128.0, yend: 128.0
+	        zstart: -128.0, zend: 128.0
+	            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+	       nframes: 1
+	       PhEncDir: UNKNOWN
+	       FieldStrength: 0.000000
+	ras xform present
+	    xform info: x_r =   1.0000, y_r =   0.0000, z_r =  -0.0000, c_r =    -1.2199
+	              : x_a =   0.0000, y_a =   1.0000, z_a =  -0.0000, c_a =    22.2580
+	              : x_s =   0.0000, y_s =   0.0000, z_s =   1.0000, c_s =   -28.8124
+
+	talairach xfm : 
+	Orientation   : RAS
+	Primary Slice Direction: axial
+
+	voxel to ras transform:
+	                1.1000   0.0000  -0.0000   -91.4204
+	                0.0000   1.0000  -0.0000  -105.7420
+	                0.0000   0.0000   1.0000  -156.8124
+	                0.0000   0.0000   0.0000     1.0000
+
+	voxel-to-ras determinant 1.10001
+
+	ras to voxel transform:
+	                0.9091   0.0000   0.0000    83.1090
+	                0.0000   1.0000   0.0000   105.7420
+	                0.0000   0.0000   1.0000   156.8124
+	                0.0000   0.0000   0.0000     1.0000
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403
+
+	 mri_convert /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz --conform 
+
+	mri_convert /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz --conform 
+	reading from /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/rawavg.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (1, 0, 0)
+	j_ras = (0, 1, 0)
+	k_ras = (-0, -0, 1)
+	changing data type from float to uchar (noscale = 0)...
+	MRIchangeType: Building histogram 0 7670.09 1000, flo=0, fhi=0.999, dest_type=0
+	Reslicing using trilinear interpolation 
+	writing to /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz...
+
+	 mri_add_xform_to_header -c /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talairach.xfm /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz 
+
+	INFO: extension is mgz
+
+	 mri_info /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz 
+
+	orig.mgz ========================================
+	Volume information for /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/orig.mgz
+	          type: MGH
+	    dimensions: 256 x 256 x 256
+	   voxel sizes: 1.000000, 1.000000, 1.000000
+	          type: UCHAR (0)
+	           fov: 256.000
+	           dof: 1
+	        xstart: -128.0, xend: 128.0
+	        ystart: -128.0, yend: 128.0
+	        zstart: -128.0, zend: 128.0
+	            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+	       nframes: 1
+	       PhEncDir: UNKNOWN
+	       FieldStrength: 0.000000
+	ras xform present
+	    xform info: x_r =  -1.0000, y_r =   0.0000, z_r =   0.0000, c_r =    -1.2199
+	              : x_a =   0.0000, y_a =   0.0000, z_a =   1.0000, c_a =    22.2580
+	              : x_s =   0.0000, y_s =  -1.0000, z_s =   0.0000, c_s =   -28.8124
+
+	talairach xfm : /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talairach.xfm
+	Orientation   : LIA
+	Primary Slice Direction: coronal
+
+	voxel to ras transform:
+	               -1.0000   0.0000   0.0000   126.7801
+	                0.0000   0.0000   1.0000  -105.7420
+	                0.0000  -1.0000   0.0000    99.1876
+	                0.0000   0.0000   0.0000     1.0000
+
+	voxel-to-ras determinant -1
+
+	ras to voxel transform:
+	               -1.0000  -0.0000  -0.0000   126.7801
+	               -0.0000  -0.0000  -1.0000    99.1876
+	               -0.0000   1.0000  -0.0000   105.7420
+	               -0.0000  -0.0000  -0.0000     1.0000
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:23:59 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:23:59 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.220709
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.220709/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.220709/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.220709/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.220709/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:27:19 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+	talairach_avi log file is transforms/talairach_avi.log...
+	mv -f /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+	Started at Fri Mar 1 22:27:20 UTC 2024
+	Ended   at Fri Mar  1 22:27:39 UTC 2024
+	talairach_avi done
+
+	 cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+	lta_convert --src orig.mgz --trg /opt/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+	7.3.2
+
+	--src: orig.mgz src image (geometry).
+	--trg: /opt/freesurfer/average/mni305.cor.mgz trg image (geometry).
+	--inmni: transforms/talairach.xfm input MNI/XFM transform.
+	--outlta: transforms/talairach.xfm.lta output LTA.
+	--s: fsaverage subject name
+	--ltavox2vox: output LTA as VOX_TO_VOX transform.
+	 LTA read, type : 1
+	 1.13374  -0.00115  -0.02918   1.64484;
+	-0.04513   2.21198  -0.57857  -12.11221;
+	 0.06124  -1.17694   1.76760   12.16263;
+	 0.00000   0.00000   0.00000   1.00000;
+	setting subject to fsaverage
+	Writing  LTA to file transforms/talairach.xfm.lta...
+	lta_convert successful.
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	#--------------------------------------------
+	#@# Talairach Failure Detection Fri Mar  1 22:27:41 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+	ERROR: talairach_afd: Talairach Transform: transforms/talairach.xfm ***FAILED*** (p=0.0000, pval=0.0000 < threshold=0.0050)
+
+	Manual Talairach alignment may be necessary, or
+	include the -notal-check flag to skip this test,
+	making sure the -notal-check flag follows -all
+	or -autorecon1 in the command string.
+	See:
+
+	http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Talairach
+
+	INFO: Retrying Talairach align using 3T-based atlas...
+
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:27:41 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:27:42 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.227797
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.227797/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.227797/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.227797/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.227797/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:31:02 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm --atlas 3T18yoSchwartzReactN32_as_orig 
+
+	talairach_avi log file is transforms/talairach_avi.log...
+	mv -f /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/talsrcimg_to_3T18yoSchwartzReactN32_as_orig_t4_vox2vox.txt /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms/talsrcimg_to_3T18yoSchwartzReactN32_as_orig_t4_vox2vox.txt
+	Started at Fri Mar 1 22:31:02 UTC 2024
+	Ended   at Fri Mar  1 22:31:23 UTC 2024
+	talairach_avi done
+
+	 cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+	lta_convert --src orig.mgz --trg /opt/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+	7.3.2
+
+	--src: orig.mgz src image (geometry).
+	--trg: /opt/freesurfer/average/mni305.cor.mgz trg image (geometry).
+	--inmni: transforms/talairach.xfm input MNI/XFM transform.
+	--outlta: transforms/talairach.xfm.lta output LTA.
+	--s: fsaverage subject name
+	--ltavox2vox: output LTA as VOX_TO_VOX transform.
+	 LTA read, type : 1
+	 1.17081  -0.02389  -0.18401   6.02785;
+	-0.07283   0.98126  -1.13649  -17.85912;
+	 0.06249   0.60265   1.86808  -28.24767;
+	 0.00000   0.00000   0.00000   1.00000;
+	setting subject to fsaverage
+	Writing  LTA to file transforms/talairach.xfm.lta...
+	lta_convert successful.
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri/transforms /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri 
+	#--------------------------------------------
+	#@# Talairach Failure Detection Fri Mar  1 22:31:25 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+	ERROR: talairach_afd: Talairach Transform: transforms/talairach.xfm ***FAILED*** (p=0.0009, pval=0.0000 < threshold=0.0050)
+
+	Manual Talairach alignment may be necessary, or
+	include the -notal-check flag to skip this test,
+	making sure the -notal-check flag follows -all
+	or -autorecon1 in the command string.
+	See:
+
+	http://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/Talairach
+
+	INFO: Trying MINC mritotal to perform Talairach align...
+
+	#--------------------------------------------
+	#@# Talairach Fri Mar  1 22:31:25 UTC 2024
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+
+	 mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+	/usr/bin/bc
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/mri_nu_correct.mni
+	--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+	nIters 1
+	mri_nu_correct.mni 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:31:25 UTC 2024
+	tmpdir is ./tmp.mri_nu_correct.mni.234764
+	cd /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.234764/nu0.mgz --dtype uchar
+	AntsN4BiasFieldCorrectionFs done
+	mri_convert ./tmp.mri_nu_correct.mni.234764/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+	mri_convert ./tmp.mri_nu_correct.mni.234764/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+	reading from ./tmp.mri_nu_correct.mni.234764/nu0.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	INFO: transform src into the like-volume: orig.mgz
+	writing to orig_nu.mgz...
+ 
+ 
+	Fri Mar  1 22:34:45 UTC 2024
+	mri_nu_correct.mni done
+
+	 talairach --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	/opt/freesurfer/bin/talairach
+	--i orig_nu.mgz --xfm transforms/talairach.auto.xfm
+	talairach 7.3.2
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	Fri Mar  1 22:34:45 UTC 2024
+	tmpdir is transforms/tmp.talairach.240368
+	/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/mri
+	mri_convert orig_nu.mgz transforms/tmp.talairach.240368/src.mnc
+	mri_convert orig_nu.mgz transforms/tmp.talairach.240368/src.mnc 
+	reading from orig_nu.mgz...
+	TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+	i_ras = (-1, 0, 0)
+	j_ras = (0, 0, -1)
+	k_ras = (0, 1, 0)
+	writing to transforms/tmp.talairach.240368/src.mnc...
+	--------------------------------------------
+	mritotal -verbose -debug -clobber -modeldir /opt/freesurfer/mni/bin/../share/mni_autoreg -protocol icbm transforms/tmp.talairach.240368/src.mnc transforms/talairach.auto.xfm
+	spawn: exec of mincinfo failed: No such file or directory
+	mritotal: crashed while running mincinfo (termination status=65280)
+	ERROR: mritotal failed, see transforms/talairach.log
+	Linux c156-153.frontera.tacc.utexas.edu 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+	recon-all -s sub-403 exited with ERRORS at Fri Mar  1 22:34:46 UTC 2024
+
+	For more details, see the log file /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/fmriprep/ds003146-fmriprep/sourcedata/freesurfer/sub-403/scripts/recon-all.log
+	To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Stderr:
+
+Traceback:
+	RuntimeError: subprocess exited with code 1.
+
+240301-22:37:06,975 cli ERROR:
+	 Preprocessing did not finish successfully. Errors occurred while processing data from participants: 403 (1). Check the HTML reports for details.
+[ReproMan] waiting for threshold of jobs to complete before continuing...
+[ReproMan] waiting for all jobs to complete before running post-command...
+[ReproMan] post-command...
+Running collection functions now...
+Done.
